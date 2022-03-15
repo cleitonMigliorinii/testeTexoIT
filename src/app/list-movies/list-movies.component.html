@@ -1,0 +1,31 @@
+<main>
+    <section class="container-table">
+
+        <h1>List movies</h1>
+
+        <header>
+            <div>
+                <label>Search Year</label>
+                <input type="number" name="searchYear" [(ngModel)]="searchYear">
+            </div>
+            <div>
+                <label>Winner?</label>
+                <select [(ngModel)]="searchWinner" >
+                    <option value="">All</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" (click)="searchMoviesList(pageIndex)"><mat-icon>search</mat-icon></button>
+            </div>
+    
+        </header>
+
+        <app-texo-table [dataSource]="listMovies" [listColumDef]="columnsDefination"></app-texo-table>
+
+        <app-paginator *ngIf="totalPages > 0" [pageIndex]="pageIndex" [totalPages]="totalPages" 
+            (outPutChangePage)="searchMoviesList($event-1)"></app-paginator>
+
+    </section>
+</main>

@@ -1,0 +1,47 @@
+<main>
+    <section class="container-table">
+
+        <h1>List years with multiple winners</h1>
+
+        <app-texo-table [dataSource]="listYearsWithMultipleWinners" [listColumDef]="columnsDefinationYearsWinners"></app-texo-table>
+  
+    </section>
+
+    <section class="container-table">
+
+        <h1>Top 3 Studios with winners</h1>
+
+        <app-texo-table [dataSource]="listTopThreeStudiosWinners" [listColumDef]="columnsDefinationTopStudio"></app-texo-table>
+  
+    </section>
+
+    <section class="container-table">
+
+        <h1>Producers with longest and shortest interval between wins</h1>
+
+
+        <h2>Maximum</h2>
+        <app-texo-table [dataSource]="listIntervalForProducers.max" [listColumDef]="columnsDefinationProducets"></app-texo-table>
+
+        <h2>Minimum</h2>
+        <app-texo-table [dataSource]="listIntervalForProducers.min" [listColumDef]="columnsDefinationProducets"></app-texo-table>
+  
+    </section>
+
+    
+    <section class="container-table">
+
+        <h1>List movie winners by year</h1>
+
+        <div class="search-group">
+            <input type="number" name="yearFilter" [(ngModel)]="yearFilter" />
+            <button mat-raised-button color="primary" (click)="searchMovieWinnersByYear(yearFilter)"><mat-icon>search</mat-icon></button>
+        </div>
+
+        <app-texo-table [dataSource]="listMovieWinnersByYear" [listColumDef]="columnsDefinationMovieWinners"></app-texo-table>
+  
+    </section>
+
+
+
+</main>

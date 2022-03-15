@@ -1,0 +1,26 @@
+header{
+    background-color: var(--colorDefault);
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+}
+
+main{
+    display: flex;
+}
+
+main aside{
+    background-color: #f8f9fa;
+    width: 20%;
+    height: 100vh;
+  
+}
+
+main aside p{
+    padding: 5px;
+}
+
+main section{
+    padding: 15px;
+    width: 80%;
+}

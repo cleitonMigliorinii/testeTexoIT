@@ -1,0 +1,9 @@
+<footer>
+
+    <button (click)="changePage(pageIndex)"><</button>
+    <div *ngFor="let numberPage of listPages">
+        <button [ngClass]="{selected: checkSelectedPage(numberPage)}" (click)="changePage(numberPage)">{{numberPage}}</button>
+    </div>
+    <button (click)="changePage(pageIndex + 2)">></button>
+    
+</footer>

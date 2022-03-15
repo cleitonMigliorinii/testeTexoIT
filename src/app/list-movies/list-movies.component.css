@@ -1,0 +1,35 @@
+table{
+    width: 100%;
+}
+
+header{
+    display: flex;
+    align-items: center;
+}
+
+ header div {
+    display: flex;
+}
+
+header div{
+    flex-direction: column;
+    padding: 10px 30px;
+}
+
+input{
+    height: 30px;
+    font-size: 16px;
+}
+
+select{
+    height: 35px;
+    font-size: 16px;
+}
+
+button{
+    padding: 7px;
+    margin-top: 15px;
+    background-color: rgb(37, 37, 170);
+    color: white;
+    border: none;
+}

@@ -1,0 +1,39 @@
+.container-table{
+    padding: 20px;
+    border: 1px solid #ede;
+    margin: 20px;
+    width: calc(50% - 90px);
+
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main section h1{
+    font-weight: bold;
+}
+
+main section h2{
+    padding-top: 20px;
+}
+
+.search-group{
+    display: flex;
+    padding-bottom: 10px
+}
+
+.search-group input{
+    height: 30px;
+    width: 100%;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .container-table{
+
+        width: calc(100% - 90px);
+    
+    }
+}
