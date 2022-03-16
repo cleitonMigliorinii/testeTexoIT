@@ -34,7 +34,7 @@
         <h1>List movie winners by year</h1>
 
         <div class="search-group">
-            <input type="number" name="yearFilter" [(ngModel)]="yearFilter" />
+            <input type="number" name="yearFilter" [(ngModel)]="yearFilter" (keydown.enter)="searchMovieWinnersByYear(yearFilter)" />
             <button mat-raised-button color="primary" (click)="searchMovieWinnersByYear(yearFilter)"><mat-icon>search</mat-icon></button>
         </div>
 

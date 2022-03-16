@@ -17,14 +17,14 @@
                 </select>
             </div>
             <div>
-                <button mat-raised-button color="primary" (click)="searchMoviesList(pageIndex)"><mat-icon>search</mat-icon></button>
+                <button mat-raised-button color="primary" (click)="searchMoviesList(0)"><mat-icon>search</mat-icon></button>
             </div>
     
         </header>
 
         <app-texo-table [dataSource]="listMovies" [listColumDef]="columnsDefination"></app-texo-table>
 
-        <app-paginator *ngIf="totalPages > 0" [pageIndex]="pageIndex" [totalPages]="totalPages" 
+        <app-paginator #paginator *ngIf="totalPages > 0" [pageIndex]="pageIndex" [totalPages]="totalPages" 
             (outPutChangePage)="searchMoviesList($event-1)"></app-paginator>
 
     </section>

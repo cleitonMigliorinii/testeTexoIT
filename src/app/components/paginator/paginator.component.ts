@@ -21,14 +21,19 @@ export class PaginatorComponent implements OnInit {
 
   ngOnInit(): void {
 
-    for (var i = 0; i < this.totalPages; i++) {
-      this.listPages[i] = i + 1;
-    }
+    this.initPaginator(this.totalPages);
 
   }
 
   changePage(page){
     this.outPutChangePage.emit(page);
+  }
+
+  public initPaginator(total){
+    this.listPages = [];
+    for (var i = 0; i < total; i++) {
+      this.listPages[i] = i + 1;
+    }
   }
 
   checkSelectedPage(page){

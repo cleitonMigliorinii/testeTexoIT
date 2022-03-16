@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { environment } from 'src/environments/environment';
+import { PaginatorComponent } from '../components/paginator/paginator.component';
 import { ColumnDefination } from '../model/columnDefination';
 import { Movies } from '../model/movies.dto';
 
@@ -14,10 +15,10 @@ const SIZE_RETURN_REGISTER = 15;
 })
 export class ListMoviesComponent implements OnInit   {
 
-  constructor(private http: HttpClient) {
-   
-   }
+  constructor(private http: HttpClient) {}
  
+  @ViewChild('paginator') paginator : PaginatorComponent;
+
   columnsDefination: ColumnDefination[] = [
     {
       name: 'Id',
@@ -55,6 +56,7 @@ export class ListMoviesComponent implements OnInit   {
     this.http.get(environment.api + `?page=${page}&size=${SIZE_RETURN_REGISTER}${this.mountFilter()}`).subscribe( (list : any) =>{
         this.listMovies = list.content;
         this.totalPages = list.totalPages;
+        this.paginator.initPaginator(this.totalPages);
         this.pageIndex = page;
     });
 
