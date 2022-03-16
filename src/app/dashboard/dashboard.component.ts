@@ -69,10 +69,10 @@ export class DashboardComponent implements OnInit {
     }
   ];
 
-  listYearsWithMultipleWinners: YearMultipleWinners[];
-  listTopThreeStudiosWinners: StudiosWithWinners[];
-  listIntervalForProducers: GroupIntervalForProducers;
-  listMovieWinnersByYear: MovieWinnersByYear[];
+  listYearsWithMultipleWinners: YearMultipleWinners[] = [];
+  listTopThreeStudiosWinners: StudiosWithWinners[] = [];
+  listIntervalForProducers: GroupIntervalForProducers = new GroupIntervalForProducers(); 
+  listMovieWinnersByYear: MovieWinnersByYear[] = [];
 
   yearFilter = 0;
 
